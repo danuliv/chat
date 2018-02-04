@@ -9,8 +9,16 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node main.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danuliv/chat.git"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danuliv/chat/issues"
+  },
+  "homepage": "https://github.com/danuliv/chat#readme"
 }
