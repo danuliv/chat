@@ -1,10 +1,10 @@
 
 var express = require('express');
 var app = express();
-var server = require('http').Server(app);
+var server = app.listen(process.env.PORT || 8000);
 var io = require('socket.io')(server);
 var path = require('path');
-
+var port = 8000;
 var users = [];
 var messages = [];
 
@@ -12,13 +12,7 @@ app.get('/',function(req,res){
 	res.sendFile(path.join(__dirname,'index.html'));
 });
 app.use('/static',express.static(path.join(__dirname,'static')));
-app.get('/:id',function(req,res){
-	if(req.params.id=='client.js'){
-		res.sendFile(path.join(__dirname,'client.js'));
-	}else if(req.params.id=='favicon.ico'){
-		res.sendStatus(404);
-	}
-});
+
 
 io.on('connection',function(socket){
 	
@@ -75,4 +69,4 @@ io.on('connection',function(socket){
 	
 });
 
-    app.listen(process.env.PORT || 8000);
+     
