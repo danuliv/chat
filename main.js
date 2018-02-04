@@ -1,9 +1,7 @@
 
 var express = require('express');
 var app = express();
-var server = app.listen(process.env.PORT || 8000,function(){
-	console.log('listen');
-});
+var server = app.listen(process.env.PORT || 8000});
 var io = require('socket.io')(server);
 var path = require('path');
 var port = 8000;
