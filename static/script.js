@@ -1,4 +1,4 @@
-var socket = io.connect('http://localhost:8000/');
+var socket = io.connect('https://chattestnodejs.herocuapp.com/');
 var users = document.getElementsByClassName('users')[0];
 var message = document.getElementById('tasksList');
 var user = "";
