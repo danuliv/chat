@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>chat</title>
+	
+	<link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
+<body>
+
+
+<div class="online">
+	<h2>Online</h2>
+	<div class="users"></div>
+</div>
+
+<div class="canvas_wrapper">
+ 	<canvas id="canvas" width="500" height="500"></canvas>
+ 	<div class="canvas_wrapper_down">
+ 		<input type="color" id="color">
+ 		<select class="lineWidth">
+ 			<option>1</option>
+ 			<option>2</option>
+ 			<option>3</option>
+ 			<option>4</option>
+ 			<option>5</option>
+ 			<option>6</option>
+ 			<option>7</option>
+ 			<option>8</option>
+ 			<option>12</option>
+ 			
+ 		</select>
+ 		<div class="clear">Очистити</div>
+ 	</div>
+ </div>
+
+
+<div id="container">
+<div id="notification">Chat</div>
+	<div id="tasks">
+	        <ul id="tasksList">
+				
+			</ul>
+		
+	</div>
+	<div id="footer">
+		<input type='text' id="taskInput" placeholder="your message"></input>
+		<button id="taskAdd">+</button>
+	</div>
+</div>
+
+ 
+
+<div class="regis_chat">
+	<h2>Введіть ім'я</h2>
+
+<div id="container_1">
+<input type="text" id="name" placeholder="your name">
+<div class="button">Connect</div>
+</div>
+
+
+</div> 
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>   
+<script type="text/javascript" src="static/script.js"></script>
+</body>
+</html>
