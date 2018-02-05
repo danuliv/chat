@@ -70,8 +70,10 @@ $('#taskAdd').on('click',function(){
 		}
 	}
 	
-	socket.emit('send message',{message:mes,autor:user});
-	$taskInput.val("");
+	if(user){
+			socket.emit('send message',{message:mes,autor:user});
+		    $taskInput.val("");
+		}
 	
 });
 var regisChat = true;
