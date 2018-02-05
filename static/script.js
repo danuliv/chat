@@ -121,9 +121,13 @@ $('.button').on('click',function(){
 		alert('invalid data');
 		return;
 	}
-	user=$('#name').val();
-	$('.regis_chat').css('left','100%');
-	socket.emit('new_user',{name:user});
+	if(regisChat){
+		regisChat=false;
+		user=$('#name').val();
+		$('.regis_chat').css('left','100%');
+		socket.emit('new_user',{name:user});
+	}
+	
 	
 });
 
