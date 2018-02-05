@@ -1,3 +1,5 @@
+(function(){
+
 var socket = io.connect('https://chattestnodejs.herokuapp.com/');
 var users = document.getElementsByClassName('users')[0];
 var message = document.getElementById('tasksList');
@@ -191,3 +193,9 @@ socket.on('clear_client',function(){
 		cx.lineTo(pos.x,pos.y);
 		cx.stroke();
 	});
+
+
+
+
+})();
+
