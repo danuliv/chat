@@ -57,7 +57,7 @@ var $taskInput = $('#taskInput');
 var $tasksList = $('#tasksList');
 
 $('#taskAdd').on('click',function(){
-	if(!$taskInput.val()){
+	if(!$taskInput.val() || $('#name').val().replace(/\s/g, '') == false){
 		alert('invalid data');
 		return;
 	}
@@ -78,7 +78,7 @@ var regisChat = true;
 document.addEventListener('keydown',function(e){
 	if(e.keyCode==13){
 			if(!regisChat){
-				if(!$taskInput.val()){
+				if(!$taskInput.val() || $('#name').val().replace(/\s/g, '') == false){
 			alert('invalid data');
 			return;
 		}
@@ -93,7 +93,7 @@ document.addEventListener('keydown',function(e){
 		socket.emit('send message',{message:mes,autor:user});
 		$taskInput.val("");
 	}else{
-		if($('#name').val() == "") {
+		if($('#name').val() == "" || $('#name').val().replace(/\s/g, '') == false ) {
 		alert('invalid data');
 		return;
 		}
@@ -101,7 +101,7 @@ document.addEventListener('keydown',function(e){
 		user=$('#name').val();
 		$('.regis_chat').css('left','100%');
 		setTimeout(function(){
-			$('.regis_chat').css('display','none');
+			$('.regis_chat').remove();
 		},500);
 		socket.emit('new_user',{name:user});
 	}
@@ -112,7 +112,7 @@ document.addEventListener('keydown',function(e){
 
 
 $('.button').on('click',function(){
-	if($('#name').val() == "") {
+	if($('#name').val() == ""  || $('#name').val().replace(/\s/g, '') == false) {
 		alert('invalid data');
 		return;
 	}
