@@ -125,6 +125,9 @@ $('.button').on('click',function(){
 		regisChat=false;
 		user=$('#name').val();
 		$('.regis_chat').css('left','100%');
+		setTimeout(function(){
+			$('.regis_chat').remove();
+		},500);
 		socket.emit('new_user',{name:user});
 	}
 	
