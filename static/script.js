@@ -185,7 +185,7 @@ socket.on('clear_client',function(){
 		});
 	   socket.on('draw_client',function(pos){
 	   	cx.beginPath();
-		cx.lineWidth=pos.lineWidth;
+		cx.lineWidth= parseInt(pos.lineWidth) > 12 ? 12 : pos.lineWidth;
 		cx.lineCap='round';
 		cx.fillStyle=pos.color;
 		cx.strokeStyle=pos.color;
