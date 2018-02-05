@@ -57,7 +57,7 @@ var $taskInput = $('#taskInput');
 var $tasksList = $('#tasksList');
 
 $('#taskAdd').on('click',function(){
-	if(!$taskInput.val() || $('#name').val().replace(/\s/g, '') == false){
+	if(!$taskInput.val() || $taskInput.val().replace(/\s/g, '') == false){
 		alert('invalid data');
 		return;
 	}
@@ -78,7 +78,7 @@ var regisChat = true;
 document.addEventListener('keydown',function(e){
 	if(e.keyCode==13){
 			if(!regisChat){
-				if(!$taskInput.val() || $('#name').val().replace(/\s/g, '') == false){
+				if(!$taskInput.val() || $taskInput.val().replace(/\s/g, '') == false){
 			alert('invalid data');
 			return;
 		}
@@ -90,8 +90,11 @@ document.addEventListener('keydown',function(e){
 				mes = mes.replace('>','&gt');
 			}
 		}
-		socket.emit('send message',{message:mes,autor:user});
-		$taskInput.val("");
+		if(user){
+			socket.emit('send message',{message:mes,autor:user});
+		    $taskInput.val("");
+		}
+		
 	}else{
 		if($('#name').val() == "" || $('#name').val().replace(/\s/g, '') == false ) {
 		alert('invalid data');
