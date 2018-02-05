@@ -74,9 +74,10 @@ $('#taskAdd').on('click',function(){
 	$taskInput.val("");
 	
 });
+var regisChat = true;
 document.addEventListener('keydown',function(e){
 	if(e.keyCode==13){
-			if($('.regis_chat').css('display')=='none'){
+			if(!regisChat){
 				if(!$taskInput.val()){
 			alert('invalid data');
 			return;
@@ -96,6 +97,7 @@ document.addEventListener('keydown',function(e){
 		alert('invalid data');
 		return;
 		}
+		regisChat=false;
 		user=$('#name').val();
 		$('.regis_chat').css('left','100%');
 		setTimeout(function(){

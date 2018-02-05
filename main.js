@@ -53,9 +53,8 @@ io.on('connection',function(socket){
 	});
 
 	socket.on('new_user',function(user){
-		users.forEach(function(user){
-			if(user.id==socket.id) return ;
-		});
+
+		
 		users.push({name:user.name,id:socket.id});
 		var names = users.map(function(user){
 			return user.name;
